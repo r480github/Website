@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<link
+  href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap"
+  rel="stylesheet"
+/>
+
+<html Land="en">
+  <head>
+    <form action="Main.html"><button class="logo">Galaxy</button></form>
+    <form action="Main.html">
+      <button class="Homebtn"><b>Home</b></button>
+    </form>
+    <form action="Games.html">
+      <button class="Games"><b>Games</b></button>
+    </form>
+    <form action="Apps.html">
+      <button class="Apps"><b>Apps</b></button>
+    </form>
+
+    <meta charset="UTF-8" />
+    <title>Galaxy</title>
+    <link rel="stylesheet" href="Home.css" />
+  </head>
+  <script src="index.js"></script>
+  <body>
+  </body>
+</html>
+  <!--START OF STARBACK HTML-->
+  <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="css/style.css" />
+
+  </head>
+
+  <body>
+    <div id="app">
+      <section id="hero">
+        <canvas id="canvas"></canvas>
+
+          <div class="buttons">
+        </div>
+      </section>
+    </div>
+
+    <script src="index.js"></script>
+
+    <script>
+      const starback = new Starback('#canvas', {
+        width: document.body.clientWidth,
+        height: document.body.clientHeight,
+        type: 'line',
+        speed: 5,
+        frequency: 5,
+        slope: { x: -1, y: 10 },
+        directionX: 1,
+        speed: 3,
+        spread: -10,
+        randomOpacity: true,
+        backgroundColor: ['#0F2027', '#203A43', '#2C5364'],
+        quantity: 30,
+      })
+
+      let mountain = new Image()
+      mountain.src = 'img/mountain2.png'
+
+      mountain.onload = () => {
+        starback.addToFront((ctx) => {
+          ctx.drawImage(
+            mountain,
+            0,
+            0,
+            mountain.width,
+            mountain.height,
+            0,
+            canvas.height - mountain.height,
+            canvas.width,
+            mountain.height
+          )
+        })
+      }
+    </script>
+  </body>
+</html>
+<!--END OF STARBACK HTML-->
